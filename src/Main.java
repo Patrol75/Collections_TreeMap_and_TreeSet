@@ -15,7 +15,7 @@ public class Main {
         people.add(new Person("Георгий", "Георгиевич Георг Георганов", 93));
         people.add(new Person("Петя", "Из пятого подъезда", 6));
         System.out.println(people);
-        Collections.sort(people, new PersonNobilityComparator());
+        Collections.sort(people, new PersonNobilityComparator(2));
         System.out.println();
         System.out.println(people);
     }
