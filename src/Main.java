@@ -18,5 +18,8 @@ public class Main {
         Collections.sort(people, new PersonNobilityComparator(2));
         System.out.println();
         System.out.println(people);
+        System.out.println();
+        people.removeIf(age -> (age.getAge() < 18));
+        System.out.println(people);
     }
 }
