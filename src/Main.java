@@ -15,7 +15,13 @@ public class Main {
         people.add(new Person("Георгий", "Георгиевич Георг Георганов", 93));
         people.add(new Person("Петя", "Из пятого подъезда", 6));
         System.out.println(people);
-        Collections.sort(people, new PersonNobilityComparator(2));
+        Collections.sort(people, ((o1, o2) -> {
+            if (o1.getSurname().split(" ").length == o2.getSurname().split(" ").length) {
+                return Integer.compare(o1.getAge(), o2.getAge());
+            } else {
+                return Integer.compare(o1.getSurname().split(" ").length, o2.getSurname().split(" ").length);
+            }
+        }));
         System.out.println();
         System.out.println(people);
     }
